@@ -1,3 +1,10 @@
 table{
-    background-color: aquamarine;
+    border-collapse: collapse;
+}
+
+tr, td{
+    padding: 0px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
 }
