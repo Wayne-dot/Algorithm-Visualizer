@@ -52,6 +52,7 @@ const Display = (row, col) => {
 
 
 const check = () =>{
+    // produce 2d array that represent white and black
     const array = [];
     for (let i = 1; i < row; i++){
         array[i] = [];
