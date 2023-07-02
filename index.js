@@ -16,25 +16,30 @@ for (let i = 0; i < row; i++){
         }
 
         else if(j == 0 && i != 0){
-            c.textContent = vr[i];
+            c.textContent = vr[i-1];
             c.classList.add("vertical_cell")
         }
         else{
             c.classList.add("normal_cell")
         }
 
-        c.addEventListener("click", function(){
-            if(this.style.backgroundColor == "black"){
-                this.style.backgroundColor = "white";
-            }
-            else{
-            this.style.backgroundColor = "black";
-            }
-        });
+        // change color when click
+        if (i != 0 && j != 0){
+            c.addEventListener("click", function(){
+                if(this.style.backgroundColor == "black"){
+                    this.style.backgroundColor = "white";
+                }
+                else{
+                this.style.backgroundColor = "black";
+                }
+                });
+        }
+
 
         r.appendChild(c);
     }
 
+    
     let table = document.getElementById("table");
     table.appendChild(r);
 }
