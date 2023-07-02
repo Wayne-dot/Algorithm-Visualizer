@@ -6,7 +6,7 @@ tr, td{
     padding: 0px;
     width: 100px;
     height: 100px;
-    border: 1px solid black;
+    border: 3px solid black;
 }
 
 .horizontal_cell, .vertical_cell{

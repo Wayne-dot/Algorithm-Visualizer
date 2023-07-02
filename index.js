@@ -1,8 +1,8 @@
-let row = 6;
+let row = 5;
 let col = 6;
 
-const hr = [3, 2, 2, 2, 4];
-const vr = [2, 2, [1, 1], [3, 1], 3];
+const hr = [1, [1, 1], [1, 2], 3, 4];
+const vr = [[3, 1], 2, 3, 4];
 
 
 for (let i = 0; i < row; i++){
@@ -23,6 +23,7 @@ for (let i = 0; i < row; i++){
             c.classList.add("normal_cell")
         }
 
+        
         // change color when click
         if (i != 0 && j != 0){
             c.addEventListener("click", function(){
