@@ -97,13 +97,23 @@ function generateCombination(length, input){
         combinations.push(combination);
     }
 
-    return combinations;
+    console.log(combinations);
+    console.log(combinations.length);
 
-    // desire output, when (10, 7)
-    // [1, 1, 1, 1, 1, 1, 1, 0, 0, 0]
-    // [0, 1, 1, 1, 1, 1, 1, 1, 0, 0]
-    // [0, 0, 1, 1, 1, 1, 1, 1, 1, 0]
-    // [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]
+    // desire output, when (5, 3)
+    // [1, 1, 1, 0, 0]
+    // [0, 1, 1, 1, 0]
+    // [0, 0, 1, 1, 1]
+
+    // output
+    // [0, 0, 1, 0, 0]
+
+    // 00, 10, 20,   01, 11, 21
+
+    for(let i = 0; i < combinations.length; i++){
+        console.log(i);
+    }
+
 }
 
 const solver = (hr, vr) => {
@@ -129,7 +139,9 @@ const solver = (hr, vr) => {
 
             let result_combination = generateCombination(c, clue);
 
-            console.log(result_combination);
+            
+
+            // console.log(result_combination);
         } 
     }
 
