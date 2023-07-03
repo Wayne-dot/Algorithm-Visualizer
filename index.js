@@ -173,8 +173,9 @@ const solver = (hr, vr) => {
 
             let result_combination = generateCombination(c, clue);
 
+            // delay the function of fillin for about 2 seconds, then execute the function, to show the animation
             fillin(i, result_combination)
-            
+
             console.log(i);
             console.log(result_combination);
         } 
