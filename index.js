@@ -86,7 +86,7 @@ const check = () =>{
 
 const solver = (hr, vr) => {
     // Function for solving the puzzle
-    // Step 1 create a 2d array with 0
+    // Step 1 create a 2d array with 0, row of 4 and column of 5
     const solution = []
 
     const r = vr.length; //4
@@ -99,9 +99,20 @@ const solver = (hr, vr) => {
         }
     }
 
-    console.log(solution);
+    // Step 2 check each row and column for guarantee cell, 
+    // Scenario 1, when the clue > 1/2 * available cell, for single number, find overlap cell
+    for(let i = 0; i < r; i++){
+        let clue = vr[i];
+        if (typeof clue == "number" && clue > c/2){
+            //  5 horizontal cell, 3 consecutive, combination
+            // 00000
+            // 11100, 01110, 00111
+            // 10, 010, 01
+            console.log(clue);
+        } 
+    }
 
-    // Step 2 check each row
+
     return 0;
 }
 
