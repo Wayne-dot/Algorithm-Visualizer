@@ -135,7 +135,7 @@ function generateCombination(length, input){
 
 
 function fillin(select_row, array){
-
+    // (selected row, [0, 0, 1, 0, 0])
     for (let i = 0; i < row-1; i++){
         if(i == select_row){
             for(let j = 0; j < array.length; j++){
@@ -147,10 +147,12 @@ function fillin(select_row, array){
         }
     }
 
-
 }
 
-const solver = (hr, vr) => {
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+
+const solver = async (hr, vr) => {
     // Function for solving the puzzle
     // Step 1 create a 2d array with 0, row of 4 and column of 5
     const solution = []
@@ -174,12 +176,36 @@ const solver = (hr, vr) => {
             let result_combination = generateCombination(c, clue);
 
             // delay the function of fillin for about 2 seconds, then execute the function, to show the animation
-            fillin(i, result_combination)
+            // First delay for 0.5 seconds, then fill in avaliable cell
+            await delay(500);
+            await fillin(i, result_combination);
 
             console.log(i);
             console.log(result_combination);
-        } 
+        }
+
+        else if(Array.isArray(clue)){
+            let sum = 0
+            let cout = 0;
+            for(let i = 0; i < clue.length; i++){
+                sum += clue[i];
+                cout += 1;
+            }
+            let final = sum + cout - 1;
+            
+            // if space in between + fill cell = number of avaliable row cell
+            if(final == hr.length){
+                console.log("fit");
+                
+                // fillin(i, [0, 1, 0...])
+            }
+            
+        }
+
     }
+
+    // Scenario 1, same, for column
+
 
 
     return 0;
