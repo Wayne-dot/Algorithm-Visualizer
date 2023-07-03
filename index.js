@@ -227,6 +227,7 @@ const solver = async (hr, vr) => {
     }
 
     // Scenario 1, same, for column
+    // HERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERER
 
     for(let i = 0; i < row; i++){
         console.log(1);
