@@ -5,6 +5,7 @@ const hr = [1, [1, 1], [1, 2], 3, 4];
 const vr = [[3, 1], 2, 3, 4];
 
 const Display = (row, col) => {
+    // create a grid
     for (let i = 0; i < row; i++){
         let r = document.createElement("tr");
         for(let j = 0; j < col; j++){
@@ -52,7 +53,9 @@ const Display = (row, col) => {
 
 
 const check = () =>{
-    // produce 2d array that represent white and black
+    // produce 2d array that represent white and black, click by the user, white 0, black 1
+    // check against the real solution
+    
     const array = [];
     for (let i = 1; i < row; i++){
         array[i] = [];
@@ -67,6 +70,12 @@ const check = () =>{
             
         }
     }
+
+    // check against the real solution
+    // write code here
+
+
+
     console.log(array);
     
     console.log("click");
@@ -75,7 +84,10 @@ const check = () =>{
 
 
 
-const solver = () => {
+const solver = (hr, vr) => {
+    // Function for solving the puzzle
+    // Step 1 create a 2d array with 0
+    // Step 2 check each row
     return 0;
 }
 
