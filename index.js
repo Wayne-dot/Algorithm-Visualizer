@@ -151,32 +151,22 @@ function fillin(select_row, array){
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-const fit = (selected_row, clue_array) =>{
+const fit = (selected_row, clue_array, final_length) =>{
     // (#, [3, 1])
     // return [1, 1, 1, 0, 1]
-
-    let row_fit = []
-    for (let i = 0; i < row-1; i++){
-        if(i == selected_row){
-            for(let j = 0; j < col-1 ; j++){
-                row_fit.push(0);
-            }
-        }
-    }
-
     // given [0, 0, 0, 0, 0] with [3, 1]
     // to [1, 1, 1, 0, 1]
+    let new_fit = [];
     for(let i = 0; i < clue_array.length; i++){
-        let number = clue_array[i];
-        console.log(number);
-        for(let j = 0; j < number ; j++){
-            row_fit[j] = 1;
+        for(let j = 0; j < clue_array[i]; j++){
+            new_fit.push(1);
+        }
+        if(new_fit.length < final_length){
+            new_fit.push(0);
         }
     }
-
-    console.log(row_fit)
-
-
+    console.log(new_fit);
+    return new_fit;
 }
 
 
@@ -225,9 +215,11 @@ const solver = async (hr, vr) => {
             if(final == hr.length){
                 console.log("fit");
                 console.log(clue);
-                fit(i, clue);
+                const new_fit_array = fit(i, clue, final);
+
                 // fit(i, clue), it will return expected [1, 1, 1, 0, 1]
-                // fillin(i, [0, 1, 0...])
+                await delay(500);
+                await fillin(i, new_fit_array);
             }
             
         }
