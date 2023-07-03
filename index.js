@@ -153,11 +153,25 @@ const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 const fit = (selected_row, clue_array) =>{
     // (#, [3, 1])
+    // return [1, 1, 1, 0, 1]
+
+    let row_fit = []
     for (let i = 0; i < row-1; i++){
-        if(i == select_row){
-            
+        if(i == selected_row){
+            for(let j = 0; j < col-1 ; j++){
+                row_fit.push(0);
+            }
         }
     }
+
+    console.log(row_fit);
+
+    for(let i = 0; i < clue_array.length; i++){
+        let number = clue_array[i];
+        
+    }
+
+
 }
 
 
@@ -206,6 +220,7 @@ const solver = async (hr, vr) => {
             if(final == hr.length){
                 console.log("fit");
                 console.log(clue);
+                fit(i, clue);
                 // fit(i, clue), it will return expected [1, 1, 1, 0, 1]
                 // fillin(i, [0, 1, 0...])
             }
