@@ -151,6 +151,15 @@ function fillin(select_row, array){
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+const fit = (selected_row, clue_array) =>{
+    // (#, [3, 1])
+    for (let i = 0; i < row-1; i++){
+        if(i == select_row){
+            
+        }
+    }
+}
+
 
 const solver = async (hr, vr) => {
     // Function for solving the puzzle
@@ -196,7 +205,8 @@ const solver = async (hr, vr) => {
             // if space in between + fill cell = number of avaliable row cell
             if(final == hr.length){
                 console.log("fit");
-                
+                console.log(clue);
+                // fit(i, clue), it will return expected [1, 1, 1, 0, 1]
                 // fillin(i, [0, 1, 0...])
             }
             
