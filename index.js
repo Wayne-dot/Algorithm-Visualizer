@@ -87,6 +87,20 @@ const check = () =>{
 const solver = (hr, vr) => {
     // Function for solving the puzzle
     // Step 1 create a 2d array with 0
+    const solution = []
+
+    const r = vr.length; //4
+    const c = hr.length; //5
+
+    for(let i = 0; i < r; i++){
+        solution[i] = [];
+        for (let j = 0; j < c; j++){
+            solution[i][j] = 0;
+        }
+    }
+
+    console.log(solution);
+
     // Step 2 check each row
     return 0;
 }
@@ -97,3 +111,4 @@ but.addEventListener("click", check);
 
 Display(row, col);
 
+solver(hr, vr);
