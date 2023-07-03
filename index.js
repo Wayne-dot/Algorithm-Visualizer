@@ -82,7 +82,25 @@ const check = () =>{
     return 0;
 }
 
+function generateCombination(length, input){
+    const combinations = [];
+    const array = Array(length).fill(0);
 
+    for(let i = 0; i < length - input ; i++){
+        const combination = array.slice();
+
+        for(let j = 0; j < i+input ; j++){
+            combination[j] = 1;
+        }
+    }
+
+    // desire output, when (10, 7)
+    // [1, 1, 1, 1, 1, 1, 1, 0, 0, 0]
+    // [0, 1, 1, 1, 1, 1, 1, 1, 0, 0]
+    // [0, 0, 1, 1, 1, 1, 1, 1, 1, 0]
+    // [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]
+    return 0;
+}
 
 const solver = (hr, vr) => {
     // Function for solving the puzzle
@@ -104,11 +122,10 @@ const solver = (hr, vr) => {
     for(let i = 0; i < r; i++){
         let clue = vr[i];
         if (typeof clue == "number" && clue > c/2){
-            //  5 horizontal cell, 3 consecutive, combination
-            // 00000
-            // 11100, 01110, 00111
-            // 10, 010, 01
-            console.log(clue);
+
+            let result = generateCombination(c, clue);
+
+            console.log(result);
         } 
     }
 
