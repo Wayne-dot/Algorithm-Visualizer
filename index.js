@@ -83,23 +83,27 @@ const check = () =>{
 }
 
 function generateCombination(length, input){
+    // generate combination of 0, 1 given length of array and length of the boxes
     const combinations = [];
     const array = Array(length).fill(0);
 
-    for(let i = 0; i < length - input ; i++){
+    for(let i = 0; i <= length - input ; i++){
         const combination = array.slice();
 
-        for(let j = 0; j < i+input ; j++){
+        for(let j = i; j < i+input ; j++){
             combination[j] = 1;
         }
+
+        combinations.push(combination);
     }
+
+    return combinations;
 
     // desire output, when (10, 7)
     // [1, 1, 1, 1, 1, 1, 1, 0, 0, 0]
     // [0, 1, 1, 1, 1, 1, 1, 1, 0, 0]
     // [0, 0, 1, 1, 1, 1, 1, 1, 1, 0]
     // [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]
-    return 0;
 }
 
 const solver = (hr, vr) => {
@@ -123,9 +127,9 @@ const solver = (hr, vr) => {
         let clue = vr[i];
         if (typeof clue == "number" && clue > c/2){
 
-            let result = generateCombination(c, clue);
+            let result_combination = generateCombination(c, clue);
 
-            console.log(result);
+            console.log(result_combination);
         } 
     }
 
