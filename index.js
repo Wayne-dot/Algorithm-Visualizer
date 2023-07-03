@@ -57,7 +57,7 @@ const check = () =>{
     // check against the real solution
     
     const array = [];
-    for (let i = 1; i < row; i++){
+    for (let i = 0; i < row; i++){
         array[i] = [];
         for (let j = 1; j < col; j++){
             let d = document.getElementById(`${i}${j}`);
@@ -97,9 +97,6 @@ function generateCombination(length, input){
         combinations.push(combination);
     }
 
-    console.log(combinations);
-    console.log(combinations.length);
-
     // desire output, when (5, 3)
     // [1, 1, 1, 0, 0]
     // [0, 1, 1, 1, 0]
@@ -110,9 +107,46 @@ function generateCombination(length, input){
 
     // 00, 10, 20,   01, 11, 21
 
-    for(let i = 0; i < combinations.length; i++){
-        console.log(i);
+    let final = [];
+
+    for(let i = 0; i < length; i++){
+        let cout = [];
+        for(let j = 0; j < combinations.length; j++){
+            cout.push(combinations[j][i]);
+        }
+
+        let real = true;
+        for(let a = 0; a < cout.length; a++){
+            if(cout[a] == 0){
+                real = false;
+            }
+        }
+
+        if(real){
+            final.push(1);
+        }
+        else{
+            final.push(0);
+        }
     }
+
+    return final;
+}
+
+
+function fillin(select_row, array){
+
+    for (let i = 0; i < row-1; i++){
+        if(i == select_row){
+            for(let j = 0; j < array.length; j++){
+                if (array[j] == 1){
+                    let fill = document.getElementById(`${i+1}${j+1}`);
+                    fill.style.backgroundColor = "black";
+                }
+            }
+        }
+    }
+
 
 }
 
@@ -139,9 +173,10 @@ const solver = (hr, vr) => {
 
             let result_combination = generateCombination(c, clue);
 
-            
+            fillin(i, result_combination)
 
-            // console.log(result_combination);
+            console.log(i);
+            console.log(result_combination);
         } 
     }
 
