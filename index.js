@@ -228,6 +228,12 @@ const solver = async (hr, vr) => {
 
     // Scenario 1, same, for column
 
+    for(let i = 0; i < row; i++){
+        console.log(1);
+        let clue_vertical = hr[i];
+        console.log(clue_vertical);
+    }
+
 
 
     return 0;
