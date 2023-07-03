@@ -164,12 +164,17 @@ const fit = (selected_row, clue_array) =>{
         }
     }
 
-    console.log(row_fit);
-
+    // given [0, 0, 0, 0, 0] with [3, 1]
+    // to [1, 1, 1, 0, 1]
     for(let i = 0; i < clue_array.length; i++){
         let number = clue_array[i];
-        
+        console.log(number);
+        for(let j = 0; j < number ; j++){
+            row_fit[j] = 1;
+        }
     }
+
+    console.log(row_fit)
 
 
 }
