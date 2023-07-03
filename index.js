@@ -173,12 +173,8 @@ const solver = (hr, vr) => {
 
             let result_combination = generateCombination(c, clue);
 
+            fillin(i, result_combination)
             
-
-            setTimeout(function() {
-                fillin(i, result_combination)
-              }, 2000);
-
             console.log(i);
             console.log(result_combination);
         } 
