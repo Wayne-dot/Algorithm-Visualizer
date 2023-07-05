@@ -245,5 +245,4 @@ const but = document.getElementById("submit");
 but.addEventListener("click", check);
 
 Display(row, col);
-
 solver(hr, vr);
