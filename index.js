@@ -34,7 +34,7 @@ const Display = (row, col) => {
                         this.style.backgroundColor = "white";
                     }
                     else{
-                    this.style.backgroundColor = "black";
+                        this.style.backgroundColor = "black";
                     }
                     });
             }
@@ -76,7 +76,7 @@ const check = () =>{
 
 
 
-    console.log(array);
+    // console.log(array);
     
     console.log("click");
     return 0;
@@ -134,18 +134,40 @@ function generateCombination(length, input){
 }
 
 
-function fillin(select_row, array){
+// change this function, if change row or column
+// change parameter can only be either row or column
+function fillin(select, array, change){
     // (selected row, [0, 0, 1, 0, 0])
-    for (let i = 0; i < row-1; i++){
-        if(i == select_row){
-            for(let j = 0; j < array.length; j++){
-                if (array[j] == 1){
-                    let fill = document.getElementById(`${i+1}${j+1}`);
-                    fill.style.backgroundColor = "black";
+
+    if (change == "row"){
+        for (let i = 0; i < row-1; i++){
+            if(i == select){
+                for(let j = 0; j < array.length; j++){
+                    if (array[j] == 1){
+                        let fill = document.getElementById(`${i+1}${j+1}`);
+                        fill.style.backgroundColor = "black";
+                    }
                 }
             }
         }
     }
+
+    else if (change == "column"){
+        console.log("bro is changing column");
+        console.log(select);
+        console.log(array);
+        for(let i = 0; i < col-1; i++){
+            if(i == select){
+                for(let j = 0; j < array.length; j++){
+                    if(array[j] == 1){
+                        let fill_col = document.getElementById(`${j+1}${i+1}`);
+                        fill_col.style.backgroundColor = "black";
+                    }
+                }
+            }
+        }
+    }
+
 
 }
 
@@ -165,7 +187,7 @@ const fit = (selected_row, clue_array, final_length) =>{
             new_fit.push(0);
         }
     }
-    console.log(new_fit);
+    // console.log(new_fit);
     return new_fit;
 }
 
@@ -196,10 +218,10 @@ const solver = async (hr, vr) => {
             // delay the function of fillin for about 2 seconds, then execute the function, to show the animation
             // First delay for 0.5 seconds, then fill in avaliable cell
             await delay(500);
-            await fillin(i, result_combination);
+            await fillin(i, result_combination, "row");
 
-            console.log(i);
-            console.log(result_combination);
+            // console.log(i);
+            // console.log(result_combination);
         }
 
         else if(Array.isArray(clue)){
@@ -213,13 +235,13 @@ const solver = async (hr, vr) => {
             
             // if space in between + fill cell = number of avaliable row cell
             if(final == hr.length){
-                console.log("fit");
-                console.log(clue);
+                // console.log("fit");
+                // console.log(clue);
                 const new_fit_array = fit(i, clue, final);
 
                 // fit(i, clue), it will return expected [1, 1, 1, 0, 1]
                 await delay(500);
-                await fillin(i, new_fit_array);
+                await fillin(i, new_fit_array, "row");
             }
             
         }
@@ -232,7 +254,17 @@ const solver = async (hr, vr) => {
     for(let i = 0; i < row; i++){
         console.log(1);
         let clue_vertical = hr[i];
-        console.log(clue_vertical);
+        // console.log(clue_vertical);
+
+        if (typeof clue_vertical == "number" && clue_vertical > r/2){
+            let result_combination_vertical = generateCombination(r, clue_vertical);
+            console.log("this");
+            console.log(result_combination_vertical)
+
+            await delay(500);
+            // function need to change
+            await fillin(i, result_combination_vertical, "column");
+        }
     }
 
 
