@@ -271,9 +271,11 @@ const solver = async (hr, vr) => {
     return 0;
 }
 
-
 const but = document.getElementById("submit");
 but.addEventListener("click", check);
 
 Display(row, col);
-solver(hr, vr);
+
+
+const start  = document.getElementById("start_signal");
+start.addEventListener("click", solver(hr, vr))
