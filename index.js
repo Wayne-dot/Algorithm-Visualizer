@@ -278,4 +278,4 @@ Display(row, col);
 
 
 const start  = document.getElementById("start_signal");
-start.addEventListener("click", solver(hr, vr))
+start.addEventListener("click", () => solver(hr, vr))
