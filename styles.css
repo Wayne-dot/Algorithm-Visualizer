@@ -1,3 +1,23 @@
+h2{
+    /* topm right, buttom, left */
+    margin: 25px 50px 75px 100px;
+}
+
+#summary{
+    text-align: center;
+}
+
+.bold {
+    background-color: rgb(6, 1, 66);
+    padding: 0 5px;
+    color: white; /* Optional: Add some padding to the background */
+}
+
+#web_title{
+    margin-top: 25px;
+    text-align: center;
+}
+
 body{
     background-color: rgb(232, 255, 253);
 }
