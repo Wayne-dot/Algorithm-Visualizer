@@ -271,10 +271,19 @@ const solver = async (hr, vr) => {
     return 0;
 }
 
+function Demo_display(occur){
+    document.addEventListener("DOMContentLoaded", function(occur){
+        // create 5 empty box, or 1 empty and 4 fill, or 4 fill and 1 empty
+        console.log("THis page is loaed");
+    })
+}
+
 const but = document.getElementById("submit");
 but.addEventListener("click", check);
 
 Display(row, col);
+const occur = 5;
+Demo_display();
 
 
 const start  = document.getElementById("start_signal");
