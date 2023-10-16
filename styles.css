@@ -1,9 +1,13 @@
-h2, #intro, #purpose{
+#bold{
+    font-weight: bold;
+}
+
+h2, #intro, #purpose, .explain, #demo{
     /* top right, buttom, left */
     margin: 0px 100px 0px 100px;
 }
 
-#summary{
+#summary, #demo_hint{
     text-align: center;
 }
 

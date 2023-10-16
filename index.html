@@ -36,27 +36,74 @@
     <h2>Purpose of this project</h2>
 
     <p id="purpose">
-        I have code a algorithm that will automatcilly solve this nonogram and visilize the algorthim with animation.
+        I have coded an algorithm that will automatically solve this nonogram and visualize the algorithm with animation.
     </p>
 
-    <h2>Method</h2>
+    <h2>Idea behind the algorthim</h2>
+
+    <p class="explain">Using basic logic, I am able to compute the probability of whether certain cells should be filled or left empty based on the number of edges. 
+        <br> Here is an example, let's say we have a single row with five column of boxes:
+    </p>
+
+    <div id="demo">
+        <table>
+            <tr>
+                <td id="demo_hint">
+                    4
+                </td>
+
+                <td>
+                </td>
+
+                <td>
+                </td>
+
+                <td>
+                </td>
+
+                <td>
+                </td>
+
+                <td>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+
+    <p class="explain">The number at the left hand side is "4", meaning in this row, <span id="bold">fourt consecutive box</span> need to be fill. 
+        In this crow, there are only two probability that can exist in this case.
+    </p>
+
+    <br> <p class="explain">One is</p>
+
+    
+
+
+    <br> <p class="explain">Another one is</p>
 
 
 
     <!-- Some example of how it is play -->
 
 
-    <button id="start_signal" class="btn btn-outline-primary">Click to Start the animation</button>
+    
 
     <!-- nest task -- customs parameter for column and row and black box initial condition-->
 
     <!-- next task -- explain how the algorthim work, show all combination, and choose the ones that are overlap-->
 
+    <hr>
+
+
+    <button id="start_signal" class="btn btn-outline-primary">Click to Start the animation</button>
+
     <div id="Table_container">
         <table id="table">
-
         </table>
     </div>
+
+
 
     <button id="submit" class="btn btn-primary">Submit</button>
 
