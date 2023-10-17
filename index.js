@@ -31,7 +31,7 @@ const Display = (row, col) => {
             if (i != 0 && j != 0){
                 c.addEventListener("click", function(){
                     if(this.style.backgroundColor == "black"){
-                        this.style.backgroundColor = "white";
+                        this.style.backgroundColor = "rgb(232, 255, 253)";
                     }
                     else{
                         this.style.backgroundColor = "black";

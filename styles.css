@@ -1,3 +1,15 @@
+#container_explain{
+    margin: 0px;
+}
+.container_explain{
+    display: flex;
+    align-items: center;
+}
+#animation{
+    display: flex;
+    justify-content: center;
+}
+
 .box_container{
     margin-left: 110px;
 }
