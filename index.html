@@ -11,22 +11,22 @@
 
 <body>
 
-    <h1 id="web_title">Nonograms Algorithm Solver</h1>
+    <h1 id="web_title">Nonogram Algorithm Solver</h1>
 
-    <h2>Introdcution</h2>
+    <h2>Introduction</h2>
 
     <!-- Explination of the rule of the game, clue of the game -->
     <p id="intro">
         Nonograms, also called Hanjie, Paint by Numbers, Picross, Griddlers, and Pic-a-Pix, among other names, 
         are puzzles where you fill in or leave empty grid cells based on numbers at the edge to uncover a 
         hidden image that looks like pixel art. For more information, 
-        <a href="https://en.wikipedia.org/wiki/Nonogram" target="_blank">click here</a>
+        <a href="https://en.wikipedia.org/wiki/Nonogram" target="_blank">click here</a>.
     </p>
 
     <hr>
         <div id="summary">
             <p>To summarize, you need to decide if the boxes needs to be 
-                <span class="bold">fill</span> or 
+                <span class="bold">filled</span> or left
                 <span class="rounded border border-secondary">empty</span>.
             </p>
         </div>
@@ -71,8 +71,8 @@
         </table>
     </div>
 
-    <p class="explain">The number at the left hand side is "4", meaning in this row, <span id="bold">fourt consecutive box</span> need to be fill. 
-        In this crow, there are only two probability that can exist in this case.
+    <p class="explain">The number at the left hand side is "4", meaning in this row, <span id="bold">four consecutive boxes</span> need to be filled. 
+        In this row, there are can only be two scenarios.
     </p>
 
     <br> 
@@ -164,11 +164,8 @@
             </table>
         </div> 
 
-        <p id="next_to_explain">These three boxes is guarantee to be fill</p>
+        <p id="next_to_explain">Basically, these three boxes are guaranted to be filled.</p>
     </div>
-
-
-
 
     <!-- Some example of how it is play -->
 
@@ -181,7 +178,7 @@
 
     <hr>
     <h2>Final Animation</h2>
-    <p class="explain">By repeating the process for each column and row, I have created an animation for it.</p>
+    <p class="explain">By repeating the process for each column and row, I have created an animation for it. Click the button!</p>
 
     <div id="animation">
         <button id="start_signal" class="btn btn-primary">Click to Start the animation</button>
