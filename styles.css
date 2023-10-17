@@ -1,10 +1,17 @@
+.box_container{
+    margin-left: 110px;
+}
+
 .gg-arrow-down {
     box-sizing: border-box;
     position: relative;
-    display: block;
+    display: flex;
     transform: scale(var(--ggs,1));
     width: 22px;
-    height: 22px
+    height: 22px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .gg-arrow-down::after,
 .gg-arrow-down::before {
@@ -20,14 +27,15 @@
     border-bottom: 2px solid;
     border-left: 2px solid;
     transform: rotate(-45deg);
-    left: 7px
+    left: 107px;
 }
 .gg-arrow-down::before {
     width: 2px;
     height: 16px;
-    left: 10px;
+    left: 110px;
     background: currentColor
 }
+
 
 
 #fill{
