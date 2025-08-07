@@ -1,111 +1,35 @@
-#container_explain{
-    margin: 0px;
-}
-.container_explain{
-    display: flex;
-    align-items: center;
-}
-#animation{
-    display: flex;
-    justify-content: center;
+body {
+  font-family: sans-serif;
+  text-align: center;
 }
 
-.box_container{
-    margin-left: 110px;
+#controls {
+  margin-bottom: 10px;
 }
 
-.gg-arrow-down {
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    transform: scale(var(--ggs,1));
-    width: 22px;
-    height: 22px;
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-.gg-arrow-down::after,
-.gg-arrow-down::before {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
-    bottom: 4px
-}
-.gg-arrow-down::after {
-    width: 8px;
-    height: 8px;
-    border-bottom: 2px solid;
-    border-left: 2px solid;
-    transform: rotate(-45deg);
-    left: 107px;
-}
-.gg-arrow-down::before {
-    width: 2px;
-    height: 16px;
-    left: 110px;
-    background: currentColor
+#grid {
+  margin: 20px auto;
 }
 
-
-
-#fill{
-    background-color: lightblue;
+.cell {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
-#bold{
-    font-weight: bold;
+.cell.start {
+  background: green;
 }
 
-h2, #intro, #purpose, .explain, #demo{
-    /* top right, buttom, left */
-    margin: 0px 100px 0px 100px;
+.cell.end {
+  background: red;
 }
 
-#summary, #demo_hint{
-    text-align: center;
+.cell.wall {
+  background: black;
 }
 
-.bold {
-    background-color: rgb(6, 1, 66);
-    padding: 0 5px;
-    color: white; /* Optional: Add some padding to the background */
-}
-
-#web_title{
-    margin-top: 25px;
-    text-align: center;
-}
-
-body{
-    background-color: rgb(232, 255, 253);
-}
-
-table{
-    border-collapse: collapse;
-}
-
-tr, td{
-    padding: 0px;
-    width: 50px;
-    height: 50px;
-    border: 3px solid black;
-}
-
-.horizontal_cell, .vertical_cell{
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    font-size: large;
-}
-
-
-#yuh_yuh{
-    background-color: blue;
-    text-align: center;
-    color: aquamarine;
-}
-
-#submit{
-    color: navy;
+.cell.path {
+  background: yellow;
 }

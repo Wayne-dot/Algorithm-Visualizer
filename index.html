@@ -1,198 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nonograms solver</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pathfinding Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
-
 <body>
-
-    <h1 id="web_title">Nonogram Algorithm Solver</h1>
-
-    <h2>Introduction</h2>
-
-    <!-- Explination of the rule of the game, clue of the game -->
-    <p id="intro">
-        Nonograms, also called Hanjie, Paint by Numbers, Picross, Griddlers, and Pic-a-Pix, among other names, 
-        are puzzles where you fill in or leave empty grid cells based on numbers at the edge to uncover a 
-        hidden image that looks like pixel art. For more information, 
-        <a href="https://en.wikipedia.org/wiki/Nonogram" target="_blank">click here</a>.
-    </p>
-
-    <hr>
-        <div id="summary">
-            <p>To summarize, you need to decide if the boxes needs to be 
-                <span class="bold">filled</span> or left
-                <span class="rounded border border-secondary">empty</span>.
-            </p>
-        </div>
-        
-    <hr>
-    
-    <h2>Purpose of this project</h2>
-
-    <p id="purpose">
-        I have coded an algorithm that will automatically solve this nonogram and visualize the algorithm with animation.
-    </p>
-
-    <h2>Idea behind the algorthim</h2>
-
-    <p class="explain">Using basic logic, I am able to compute the probability of whether certain cells should be filled or left empty based on the number of edges. 
-        <br> Here is an example, let's say we have a single row with five column of boxes:
-    </p>
-
-    <div id="demo">
-        <table>
-            <tr>
-                <td id="demo_hint">
-                    4
-                </td>
-
-                <td>
-                </td>
-
-                <td>
-                </td>
-
-                <td>
-                </td>
-
-                <td>
-                </td>
-
-                <td>
-                </td>
-
-            </tr>
-        </table>
-    </div>
-
-    <p class="explain">The number at the left hand side is "4", meaning in this row, <span id="bold">four consecutive boxes</span> need to be filled. 
-        In this row, there are can only be two scenarios.
-    </p>
-
-    <br> 
-
-    <div id="demo">
-        <table>
-            <tr>
-                <td id="demo_hint">
-                    4
-                </td>
-
-                <td id="fill">
-                </td>
-
-                <td id="fill">
-                </td>
-
-                <td id="fill">
-                </td>
-
-                <td id="fill">
-                </td>
-
-                <td>
-                </td>
-
-            </tr>
-        </table>
-    </div>
-
-    <div class="box_container">
-        <div class="gg-arrow-down"></div>
-        <div class="gg-arrow-down"></div>
-        <div class="gg-arrow-down"></div>
-    </div>
-
-    <div id="demo">
-        <table>
-            <tr>
-                <td id="demo_hint">
-                    4
-                </td>
-
-                <td>
-                </td>
-
-                <td id="fill">
-                </td>
-
-                <td id="fill">
-                </td>
-
-                <td id="fill">
-                </td>
-
-                <td id="fill">
-                </td>
-
-            </tr>
-        </table>
-    </div>
-
-    <br>
-
-    <div class="container_explain">
-        <div id="demo">
-            <table>
-                <tr>
-                    <td id="demo_hint">
-                        4
-                    </td>
-    
-                    <td>
-                    </td>
-    
-                    <td id="fill">
-                    </td>
-    
-                    <td id="fill">
-                    </td>
-    
-                    <td id="fill">
-                    </td>
-    
-                    <td>
-                    </td>
-    
-                </tr>
-            </table>
-        </div> 
-
-        <p id="next_to_explain">Basically, these three boxes are guaranted to be filled.</p>
-    </div>
-
-    <!-- Some example of how it is play -->
-
-
-    
-
-    <!-- nest task -- customs parameter for column and row and black box initial condition-->
-
-    <!-- next task -- explain how the algorthim work, show all combination, and choose the ones that are overlap-->
-
-    <hr>
-    <h2>Final Animation</h2>
-    <p class="explain">By repeating the process for each column and row, I have created an animation for it. Click the button!</p>
-
-    <div id="animation">
-        <button id="start_signal" class="btn btn-primary">Click to Start the animation</button>
-
-        <div id="Table_container">
-            <table id="table">
-            </table>
-        </div>
-
-    </div>
-
-    
-    <button id="submit" class=""></button>
-
-    <script src="index.js"></script>
+  <h1>Pathfinding Visualizer</h1>
+  <div id="controls">
+    <label for="algorithm">Algorithm:</label>
+    <select id="algorithm">
+      <option value="bfs">Breadth-First Search</option>
+      <option value="dfs">Depth-First Search</option>
+    </select>
+    <button id="run">Run</button>
+    <button id="reset">Reset</button>
+  </div>
+  <p>Click to set start (green) and end (red). Subsequent clicks toggle walls.</p>
+  <div id="grid"></div>
+  <script src="index.js"></script>
 </body>
 </html>
